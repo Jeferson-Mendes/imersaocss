@@ -1,3 +1,9 @@
+/* To use fonts: 
+font-family: 'Balsamiq Sans', cursive;
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Mono', monospace;
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +11,7 @@
 }
 
 body {
-    font-family: Arial;
+    font-family: 'Balsamiq Sans', cursive;
     font-size: 12px;
   }
 
@@ -22,14 +28,20 @@ body {
   }
 
   header {
-    background-image: url('../img/fundo.jpg');
-    background-size: 100vw auto;
+    background-image: url('../img/fundo2.jpg');
+    background-size: auto 100vh;
     align-items: center;
     display: flex;
     height: 80vh;
     justify-content: center;
   }
   
+  @media (min-width: 570px) {
+    header {
+      background-size: auto 100vw;
+    }
+  }
+
   .menu {
     background-color: white;
     position: fixed;
@@ -54,6 +66,7 @@ body {
   a {
     color: teal;
     text-decoration: none;
+    transition: 600ms;
   }
   
   a:hover {
@@ -68,13 +81,120 @@ body {
 
   .site-title {
     font-size: 4em;
+    font-family: 'Roboto', sans-serif;
   }
   
   .site-subtitle {
     font-style: italic;
+    font-family: 'Roboto Mono', monospace;
+    line-height: 2em;
+  }
+
+  .portfolio {
+    padding: 2em;
+    /*height: 100vh*/
+  }
+  
+  .portfolio h2 {
+    font-family: 'Roboto Mono', monospace;
+    margin-bottom: 1.5em;
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .portfolio  .grid {
+    display: grid;
+    gap: 2em;
+  }
+
+  @media(min-width: 560px){
+    .portfolio .grid {
+      grid-template-columns: 260px 260px;
+    }
+  }
+
+  @media(min-width: 880px){
+    .portfolio .grid {
+      grid-template-columns: repeat(3, 260px);
+      align-content: center;
+      justify-content: center;
+      height: calc(100vh - 8em - 48px);
+    }
+  }
+
+  .portfolio figure {
+    background-color: teal;
+    text-align: center;
+    border-radius: 2%;
+    box-shadow: 2px 2px 2px GAINSBORO;
   }
 
   .img-portfolio {
+    padding: 12px;
     height: 180px;
-    width: 180px;
+    width: 260px;
+    object-fit: cover;
+    object-position: left;
+    border-radius: 10%;
+    transition: 600ms;
+  }
+
+  .img-portfolio:hover {
+    -moz-transform: scale(1.1);
+	  -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  
+  .portfolio figure figcaption a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: WHITESMOKE;
+    padding: 10px;
+    transition: 400ms;
+  }
+
+  .portfolio figure figcaption a:hover {
+    color: GAINSBORO;
+  }
+
+  .portfolio figure p {
+    font-family: 'Roboto Mono', monospace;
+    color: WHITESMOKE;
+    padding: 6px;
+  }
+
+  .sobre {
+    background-color: GAINSBORO;
+  }
+
+  .sobre h2 {
+    padding: 1em;
+    height: 50vh;
+  }
+  
+  .contato {
+    background-color: dimgray;
+  }
+
+  .contato h2 {
+    padding: 1em;
+    height: 20vh;
+  }
+
+  .em-breve {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 30px;
+    position: relative;
+    border-radius: 8px;
+    background-color: orangered;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    top: -16px;
+    left: 10px;
   }
