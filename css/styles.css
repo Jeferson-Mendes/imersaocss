@@ -43,10 +43,11 @@ body {
   }
 
   .menu {
-    background-color: white;
+    background-color: #fff;
     position: fixed;
     top: 0;
     width: 100vw;
+    z-index: 1;
   }
   
   .menu ul {
@@ -61,16 +62,18 @@ body {
   .menu a {
     display: block;
     padding: 10px;
+    transition: background-color 600ms, color 600ms;
+  }
+  .menu a:active,
+  .menu a:hover {
+    background-color: teal;
+    color: #fff;
   }
   
   a {
     color: teal;
     text-decoration: none;
     transition: 600ms;
-  }
-  
-  a:hover {
-    text-decoration: underline;
   }
 
   .site-subtitle,
@@ -82,6 +85,21 @@ body {
   .site-title {
     font-size: 4em;
     font-family: 'Roboto', sans-serif;
+
+    transform: scale(0.2) translateY(10vh);
+    opacity: 0.2;
+    animation: ease 2s animacaoTitulo forwards;
+  }
+
+  @keyframes animacaoTitulo {
+    from {
+      transform: scale(0.2) translateY(10vh);
+      opacity: 0.2;
+    }
+    to {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
   }
   
   .site-subtitle {
@@ -92,14 +110,38 @@ body {
 
   .portfolio {
     padding: 2em;
-    /*height: 100vh*/
+    min-height: 100vh;
   }
-  
+
+  .contato h2,
   .portfolio h2 {
     font-family: 'Roboto Mono', monospace;
     margin-bottom: 1.5em;
     font-size: 2em;
     text-align: center;
+  }
+
+  .sobre h2 {
+    text-align: center;
+    padding: 1.4em;
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 1.2em;
+    color: LIGHTCORAL;
+  }
+
+  .sobre p {
+    font-family: 'Roboto', sans-serif;
+    width: 50vw;
+    margin: auto;
+    text-align: center;
+  }
+
+  .hobby {
+    padding: 2em;
+    width: 50vw;
+    text-align: center;
+    margin: auto;
+    color: crimson;
   }
 
   .portfolio  .grid {
@@ -139,10 +181,9 @@ body {
     transition: 600ms;
   }
 
+  .img-portfolio:active,
   .img-portfolio:hover {
-    -moz-transform: scale(1.1);
-	  -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+    transform: scale(1.2) rotate(-2deg);
   }
   
   .portfolio figure figcaption a {
@@ -166,35 +207,37 @@ body {
 
   .sobre {
     background-color: GAINSBORO;
+    min-height: 40vh;
   }
 
   .sobre h2 {
-    padding: 1em;
-    height: 50vh;
+    padding: 0.5em;
+    
   }
   
   .contato {
     background-color: dimgray;
+    min-height: 10vh;
   }
 
   .contato h2 {
-    padding: 1em;
-    height: 20vh;
+    padding: 0.4em;
+    margin-bottom: 1em;
   }
 
-  .em-breve {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 30px;
-    position: relative;
-    border-radius: 8px;
-    background-color: orangered;
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    top: -16px;
-    left: 10px;
+  .contato a {
+    color: whitesmoke;
+    font-size: 4em;
+    transition: 600ms;
+  }
+
+  .contato a:active,
+  .contato a:hover {
+    text-decoration: none;
+    text-shadow: 0 0 40px rgba(70, 130, 180);
+  }
+
+  .contato .icons {
+    text-align: center;
+    padding: 1em;
   }
