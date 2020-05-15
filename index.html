@@ -15,6 +15,24 @@
 </head>
 
 <body>
+    <nav class="submenu">
+        <div class="hamburguer">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="menuHidden">
+            <ul class="ul-menu">
+                <li>
+                    <a href="#portfolio">Projetos</a>
+                </li>
+                <li>
+                    <a href="#sobre">Sobre</a>
+                </li>
+                <li>
+                    <a href="#contato">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <header>
         <nav class="menu">
             <ul>
@@ -65,7 +83,9 @@
         <!-- About me -->
         <h2>Sobre mim</h2>
         <p class="sobre-text">
-            Apaixonado por Tecnologia, graduando em Sistemas de Infomação pelo Instituto Federal de Educação, Ciência e Tecnologia do Ceará. Desenvolvimento Web, IOT, Engenharia de Software e Empreendedorismo, são temas/áreas em que venho me dedicando ultimamente.
+            Apaixonado por Tecnologia, graduando em Sistemas de Infomação pelo Instituto Federal de Educação, Ciência e
+            Tecnologia do Ceará. Desenvolvimento Web, IOT, Engenharia de Software e Empreendedorismo, são temas/áreas em
+            que venho me dedicando ultimamente.
         </p>
         <div class="hobby">
 
@@ -105,6 +125,37 @@
         </div>
     </section>
 
+    <script>
+
+        let hamburguerButton = document.querySelector('.hamburguer');
+        let menu = document.querySelector('.menuHidden');
+        let ulMenu = document.querySelector('.ul-menu');
+
+        hamburguerButton.addEventListener('click', e => {
+            e.preventDefault()
+
+            if (menu.classList.contains('menuHidden')) {
+
+                menu.classList.remove('menuHidden')
+                menu.classList.add('menuNoHidden')
+
+                if (ulMenu.classList.contains('ul-menu')) {
+
+                    ulMenu.classList.remove('ul-menu')
+                    ulMenu.classList.add('.ul-menuBlock')
+                }
+            }
+            else {
+                menu.classList.remove('menuNoHidden')
+                menu.classList.add('menuHidden')
+
+                ulMenu.classList.remove('ul-menuBlock')
+                ulMenu.classList.add('.ul-menu')
+            }
+
+        })
+
+    </script>
 </body>
 
 </html>
