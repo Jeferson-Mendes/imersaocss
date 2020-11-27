@@ -16,7 +16,7 @@ body {
 	width: 300px;
 	height: 100vh;
 	background-color: white;
-
+	z-index: 3;
 	position: absolute;
 	/* left: -280px; */
 
@@ -39,7 +39,6 @@ body {
 	float: right;
 	transform: rotate(-45deg);
 	cursor: pointer;
-	z-index: 1;
 	transition: 400ms;
 }
 
@@ -117,6 +116,8 @@ body {
 .personalContainer {
 	position: relative;
 	transition: all 600ms;
+	left: 150px;
+	text-align: center;
 	/* Here, will have information about top position ex: top: -100%; */
 	top: 0;
 }
@@ -126,6 +127,8 @@ body {
 	right: 0;
 	top: 50%;
 	transform: translateY(-50%);
+
+	z-index: 4;
 }
 
 .personalContainer .navigationCircle .circle{
@@ -142,6 +145,7 @@ body {
 	background-color: #E3F6F5;
 }
 
+/*
 .contentField {
 	text-align: center;
 	margin-left: -20px;
@@ -149,12 +153,14 @@ body {
 	transition: all 400ms;
 }
 
+
 .contentFieldMlActive {
 	text-align: center;
 	margin-left: 300px;
 
 	transition: all 400ms;
 }
+*/
 
 .apresentation {
 	padding-top: 10%;
@@ -190,4 +196,108 @@ body {
 	padding-top: 40px;
 	font-size: 16px;
 	color: #fff;
+}
+
+.skillsContainer {
+	padding-top: 40px; 
+}
+
+.skillsContainer .skills {
+	display: grid;
+	align-items: center;
+	justify-content: center;
+
+	grid-template-columns: repeat(3, 100px);
+	grid-template-rows: repeat(4, 100px);
+
+	grid-row-gap: 60px;
+	grid-column-gap: 100px;
+}
+
+.skillsContainer .skills img {
+	display: block;
+	width: 60px;
+	margin-top: 20px;
+
+	transition: all 400ms;
+}
+
+.skillsContainer .skills img:hover {
+	transform: scale(0.9);
+}
+
+.skillsContainer .skills div {
+	color: whitesmoke;
+	font-weight: bold;
+}
+
+/* PROJECT SECTION */
+
+.projectField .projects {
+	width: 60%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin: auto;
+}
+
+.projectField .projects div {
+	padding: 14px;
+}
+
+.projectField .projects div span {
+
+}
+
+.projectField .projects div figure {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+	background-color: #f9813a;
+
+	transition: all 400ms;
+} 
+
+.projectField .projects div figure:hover {
+	transform: scale(1.1);
+	opacity: 0.9;
+}
+
+.projectField .projects div figure h1 a {
+	text-decoration: none;
+	color: #222831;
+	font-size: 20px;
+}
+
+.projectField .projects .goToGit {
+	color: white;
+}
+
+
+.contactField ul {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.contactField ul li {
+	list-style: none;
+	background-color: whitesmoke;
+	margin: 50px;
+	padding: 50px;
+	border-radius: 50px;
+	transition: all 400ms;
+}
+
+.contactField ul li:hover {
+	transform: scale(1.1);
+}
+
+.contactField ul li a img {
+	width: 40px;
 }
