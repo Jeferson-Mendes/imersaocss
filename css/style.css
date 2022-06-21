@@ -114,9 +114,10 @@ body {
 }
 
 .personalContainer {
-	position: relative;
+	/*position: relative;*/
 	transition: all 600ms;
-	left: 150px;
+	/*left: 150px;*/
+	padding-left: 280px;
 	text-align: center;
 	/* Here, will have information about top position ex: top: -100%; */
 	top: 0;
